@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.11.BUILD-SNAPSHOT</version>
+		<version>1.5.10.RELEASE</version>
 		<relativePath/>
 	</parent>
 
@@ -31,8 +31,8 @@
 			<version>2.5.10</version>
 			<exclusions>
 				<exclusion>
-					<artifactId>spring</artifactId>
 					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -43,8 +43,12 @@
 			<version>3.4.11</version>
 			<exclusions>
 				<exclusion>
-					<artifactId>slf4j-log4j12</artifactId>
 					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -58,11 +62,22 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- 排除Tomcat启动器，如果用jetty需要排除，如果要打包(war)部署到服务器需要排除内置Tomcat-->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

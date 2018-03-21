@@ -1,4 +1,4 @@
-package com.yangkai.provider;
+package junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

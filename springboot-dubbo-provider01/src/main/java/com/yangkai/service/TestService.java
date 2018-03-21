@@ -1,6 +1,8 @@
 package com.yangkai.service;
 
-public interface TestService {
+import java.io.Serializable;
+
+public interface TestService extends Serializable {
 
     void test(String args);
 }
