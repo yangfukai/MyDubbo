@@ -16,7 +16,7 @@
     <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
     <dubbo:annotation package="com.yangkai.service" />
     <!-- 声明需要暴露的服务接口 -->
-    <!--<dubbo:service interface="com.yangkai.service.TestService" ref="testService" timeout="10000"/>-->
+    <dubbo:service interface="com.yangkai.service.TestService" version="0.0.1" ref="testService" timeout="10000"/>
     <!-- 和本地 bean 一样实现服务 -->
-    <!--<bean id="testService" class="com.yangkai.service.serviceImpl.TestServiceImpl" />-->
+    <bean id="testService" class="com.yangkai.serviceImpl.TestServiceImpl" />
 </beans>
